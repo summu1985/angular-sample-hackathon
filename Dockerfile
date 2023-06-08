@@ -11,4 +11,4 @@ RUN npm install
 RUN npm run build --prod
 #stage 2
 FROM registry.access.redhat.com/ubi8/nginx-120
-COPY --from=node /opt/approot/src/dist/$APP_NAME /usr/share/nginx/html
+COPY --from=node /app/dist/$APP_NAME /usr/share/nginx/html
