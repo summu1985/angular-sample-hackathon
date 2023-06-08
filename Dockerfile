@@ -1,7 +1,7 @@
 #stage 1
 ARG APP_NAME=angular-frontend
-USER 1001
 FROM registry.access.redhat.com/ubi8/nodejs-16:latest as node
+USER 1001
 WORKDIR /app
 COPY . .
 RUN npm install
