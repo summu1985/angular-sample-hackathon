@@ -10,8 +10,8 @@ COPY . .
 RUN npm install
 RUN npm run build --prod
 #stage 2
-FROM nginx:1.17
+FROM nginx:latest
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=node /app/dist /usr/share/nginx/html
 EXPOSE 8080:8080
 CMD ["nginx", "-g", "daemon off;"]
