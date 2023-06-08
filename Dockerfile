@@ -1,10 +1,6 @@
 #stage 1
 ARG APP_NAME=angular-frontend
 FROM node:16.17.0 as node
-#RUN chgrp -R 0 /opt
-#RUN chmod -R g=u /opt
-#RUN mkdir -p /opt/approot/src
-#WORKDIR /opt/approot/src
 WORKDIR /app
 COPY . .
 RUN npm install
