@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npx ng serve",
-    "build": "ng build --output-path=dist/frontend-angular",
+    "build": "ng build --output-path=dist/angular-frontend",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
