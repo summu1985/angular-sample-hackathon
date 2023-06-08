@@ -12,6 +12,6 @@ RUN npm run build --prod
 #stage 2
 FROM nginx:latest
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=node /app/dist/angular-frontend /usr/share/nginx/html
+COPY --from=node /app/dist/frontend-angular /usr/share/nginx/html
 EXPOSE 8080:8080
 CMD ["nginx", "-g", "daemon off;"]
