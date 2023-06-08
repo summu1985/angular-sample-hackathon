@@ -10,5 +10,8 @@ COPY . .
 RUN npm install
 RUN npm run build --prod
 #stage 2
-FROM registry.access.redhat.com/ubi8/nginx-120
-COPY --from=node /app/dist/$APP_NAME /usr/share/nginx/html
+FROM nginx:1.17
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 8080:8080
+CMD ["nginx", "-g", "daemon off;"]
