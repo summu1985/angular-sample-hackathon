@@ -1,5 +1,5 @@
 #stage 1
-ARG APP_NAME
+ARG APP_NAME=angular-frontend
 FROM registry.access.redhat.com/ubi8/nodejs-16:latest as node
 WORKDIR /app
 COPY . .
